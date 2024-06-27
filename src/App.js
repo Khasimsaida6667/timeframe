@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+// import React, { useState } from 'react';
+// import Chart from './Chart';
+// import './App.css';
+
+// const App = () => {
+//   const [timeframe, setTimeframe] = useState('daily');
+
+//   return (
+//     <div className="App">
+//       <h1>Chart Application</h1>
+//       <div className="timeframe-buttons">
+//         <button onClick={() => setTimeframe('daily')} aria-label="Show daily data">Daily</button>
+//         <button onClick={() => setTimeframe('weekly')} aria-label="Show weekly data">Weekly</button>
+//         <button onClick={() => setTimeframe('monthly')} aria-label="Show monthly data">Monthly</button>
+//       </div>
+//       <Chart timeframe={timeframe} />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+import React, { useState } from 'react';
+import Chart from './Chart';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [timeframe, setTimeframe] = useState('daily');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Chart Application</h1>
+      <div className="timeframe-buttons">
+        <button onClick={() => setTimeframe('daily')} aria-label="Show daily data">Daily</button>
+        <button onClick={() => setTimeframe('weekly')} aria-label="Show weekly data">Weekly</button>
+        <button onClick={() => setTimeframe('monthly')} aria-label="Show monthly data">Monthly</button>
+      </div>
+      <Chart timeframe={timeframe} />
     </div>
   );
-}
+};
 
 export default App;
